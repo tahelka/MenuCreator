@@ -22,7 +22,7 @@ namespace Ex04.Menus.Test
 
         private MenuItem createShowInfoMenu()
         {
-            MenuItem showInfoMenuItem = new MenuItem("Show info");
+            MenuItem showInfoMenuItem = new MenuItem("Version And Spaces");
             Version versionAction = new Version();
             SpaceCount spaceCountAction = new SpaceCount();
 
@@ -44,7 +44,7 @@ namespace Ex04.Menus.Test
             return showDateTimeMenuItem;
         }
 
-        public void Start()
+        public void CreateAndShowMenu()
         {
             createMainMenu();
             m_Menu.Show();

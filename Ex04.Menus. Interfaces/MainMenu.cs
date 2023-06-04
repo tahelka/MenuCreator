@@ -1,4 +1,6 @@
-﻿namespace Ex04.Menus.Interfaces
+﻿using System;
+
+namespace Ex04.Menus.Interfaces
 {
     public class MainMenu
     {
@@ -12,6 +14,7 @@
         public void Show()
         {
             Menu.Show();
+            Console.Clear();
         }
     }
 }

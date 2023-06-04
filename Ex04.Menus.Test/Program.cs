@@ -1,14 +1,15 @@
 ﻿namespace Ex04.Menus.Test
 {
-    class Program
+    public class Program
     {
         public static int Main()
         {
             TestMenuUsingDelegate delegateTest = new TestMenuUsingDelegate();
-            delegateTest.CreateAndRunMenu();
-
             TestMenuUsingInterface interfaceTest = new TestMenuUsingInterface();
-            interfaceTest.Start();
+
+            delegateTest.CreateAndRunMenu();
+            interfaceTest.CreateAndShowMenu();
+
             return 0;
         }
     }

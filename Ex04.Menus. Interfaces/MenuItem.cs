@@ -15,6 +15,7 @@ namespace Ex04.Menus.Interfaces
             IsMainMenu = i_IsMainMenu;
             SubItems = new List<MenuItem>();
         }
+
         public void Show()
         {
             bool back = false;
@@ -23,7 +24,6 @@ namespace Ex04.Menus.Interfaces
             {
                 showCurrentMenu();
                 int inputFromUser = getInputFromUser();
-                Console.Clear();
 
                 if(inputFromUser == 0)
                 {
@@ -64,6 +64,7 @@ namespace Ex04.Menus.Interfaces
             {
                 Console.WriteLine($"{index++} -> {subMenuItem.Title}");
             }
+
             Console.WriteLine($@"0 -> {(IsMainMenu ? "Exit" : "Back")}
 ------------------------");
         }

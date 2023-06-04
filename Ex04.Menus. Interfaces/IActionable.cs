@@ -1,6 +1,6 @@
 ﻿namespace Ex04.Menus.Interfaces
 {
-    public  interface IActionable
+    public interface IActionable
     {
         void Action();
     }

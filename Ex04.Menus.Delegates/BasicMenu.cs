@@ -5,7 +5,7 @@ namespace Ex04.Menus.Delegates
 {
     public class BasicMenu
     {
-        private const int ExitOrBack = 0;
+        private const int k_ExitOrBack = 0;
         private readonly bool r_IsMainMenu;
         private List<MenuItem> m_SubItems;
 
@@ -33,6 +33,7 @@ namespace Ex04.Menus.Delegates
             {
                 Console.WriteLine($"{index++} -> {menuItem.m_BasicMenu.MenuTitle}");
             }
+
             Console.WriteLine($@"0 -> {(r_IsMainMenu ? "Exit" : "Back")}
 ------------------------");
         }
@@ -57,7 +58,7 @@ namespace Ex04.Menus.Delegates
         {
             showCurrentMenu();
             int userChoice = getInputFromUser();
-            if (userChoice == ExitOrBack)
+            if (userChoice == k_ExitOrBack)
             {
                 return;
             }
