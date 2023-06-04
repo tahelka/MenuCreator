@@ -1,29 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Ex04.Menus.Delegates
 {
-    class MenuItem
+    public class MenuItem
     {
-        public event Action<MenuItem> ReportSelectedItems;
-        private List<MenuItem> m_SubMenu;
-        public string MenuTitle { get; set; }
+        public BasicMenu m_BasicMenu;
+        public event Action<MenuItem> Selected;
 
-        private void notifySelectedItems()
+        public MenuItem(string i_MenuTitle)
         {
-            if (ReportSelectedItems != null)
-            {
-                ReportSelectedItems.Invoke(m_ID);
+            bool isMainMenu = false;
 
-                /// which does this:
-                ///foreach (ReportSickDelegate observerDelegate in m_ReportSickDelegates.GetInvocationList())
-                ///{
-                ///    observerDelegate.Invoke(m_ID);SelectedItems
-                ///}
+            m_BasicMenu = new BasicMenu(i_MenuTitle, isMainMenu);
+        }
+
+        protected virtual void OnSelected()
+        {
+            if (Selected != null)
+            {
+                Selected.Invoke(this);
             }
+        }
+
+        internal void MenuItemSelected()
+        {
+            OnSelected();
+        }
+
+        public void AddSubMenuItemToMenuItem(MenuItem i_MenuItemToAdd)
+        {
+            m_BasicMenu.AddSubMenuItemToMenu(i_MenuItemToAdd);
         }
     }
 }

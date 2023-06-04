@@ -1,13 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Ex04.Menus.Delegates
 {
-    class MainMenu
+    public class MainMenu 
     {
-        List<MenuItem> m_Menu;
-    }
+        public BasicMenu m_BasicMenu;
+
+        public MainMenu(string i_MenuTitle)
+        {
+            bool isMainMenu = true;
+
+            m_BasicMenu = new BasicMenu(i_MenuTitle, isMainMenu);  
+        }
+       
+        public void RunMenu()
+        {
+            m_BasicMenu.RunMenu();
+        }
+
+        public void AddSubMenuItemToMainMenu(MenuItem i_MenuItemToAdd)
+        {
+            m_BasicMenu.AddSubMenuItemToMenu(i_MenuItemToAdd);
+        }
+    } 
 }
