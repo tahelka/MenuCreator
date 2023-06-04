@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 using Console = System.Console;
 
 namespace Ex04.Menus.Interfaces
@@ -44,13 +43,14 @@ namespace Ex04.Menus.Interfaces
         private int getInputFromUser()
         {
             int result;
+            int numberOfMenuItems = SubItems.Count;
 
-            Console.WriteLine($"Enter your request: (1 to 2 or press '0' to {(IsMainMenu ? "exit" : "back")}).");
-            while (!int.TryParse(Console.ReadLine(), out result) || result > 2 || result < 0)
+            Console.WriteLine($"Enter your request: (1 to {numberOfMenuItems} or press '0' to {(IsMainMenu ? "exit" : "back")}).");
+            while (!int.TryParse(Console.ReadLine(), out result) || result > numberOfMenuItems || result < 0)
             {
                 Console.WriteLine("Invalid input");
             }
-            ;
+            
             return result;
         }
 
@@ -58,8 +58,7 @@ namespace Ex04.Menus.Interfaces
         {
             int index = 1;
 
-            Console.WriteLine($@"
-**{Title}**
+            Console.WriteLine($@"**{Title}**
 ------------------------");
             foreach(MenuItem subMenuItem in SubItems)
             {

@@ -27,8 +27,7 @@ namespace Ex04.Menus.Delegates
         {
             int index = 1;
 
-            Console.WriteLine($@"
-**{MenuTitle}**
+            Console.WriteLine($@"**{MenuTitle}**
 ------------------------");
             foreach (MenuItem menuItem in m_SubItems)
             {

@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 namespace Ex04.Menus.Delegates
 {
     public class MainMenu 
@@ -15,6 +16,7 @@ namespace Ex04.Menus.Delegates
         public void RunMenu()
         {
             m_BasicMenu.RunMenu();
+            Console.Clear();
         }
 
         public void AddSubMenuItemToMainMenu(MenuItem i_MenuItemToAdd)

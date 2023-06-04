@@ -12,7 +12,7 @@ namespace Ex04.Menus.Interfaces
         {
             Console.WriteLine("Please enter the line to count spaces");
             string line = Console.ReadLine();
-            Console.WriteLine($@"There are {countSpaces(line)} space in: {line}");
+            Console.WriteLine($@"There are {countSpaces(line)} spaces in: {line}");
         }
 
         private int countSpaces(string i_String)
