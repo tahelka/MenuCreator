@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Ex04.Menus.Delegates;
-
-namespace Ex04.Menus.Test
+﻿namespace Ex04.Menus.Test
 {
     class Program
     {
@@ -13,6 +7,8 @@ namespace Ex04.Menus.Test
             TestMenuUsingDelegate delegateTest = new TestMenuUsingDelegate();
             delegateTest.CreateAndRunMenu();
 
+            TestMenuUsingInterface interfaceTest = new TestMenuUsingInterface();
+            interfaceTest.Start();
             return 0;
         }
     }
